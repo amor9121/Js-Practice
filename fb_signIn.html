@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var database = [
+        {
+            username: "Cindy",
+            password: "000"
+        },
+        {
+            username: "Rosa",
+            password: "ABC"
+        },
+        {
+            username: "Jimmy",
+            password: "xXXxx"
+        }
+    ];
+    var newsfeed = [
+        {
+            username: "Billy",
+            timeline: "so tired!"
+        },
+        {
+            username: "William",
+            timeline: "Yes sir!"
+        },
+        {
+            username: "Melody",
+            timeline: "What's up?!"
+        }
+    ];
+
+    function isUserValid(username,password){
+        for (var i=0; i < database.length; i++){
+            if(database[i].username == username && database[i].password == password){
+                return true;
+            }    
+        }
+        return false;
+    }
+
+    function signIn(username,password){
+        if(isUserValid(username,password)){
+            console.log(newsfeed);
+        } else {
+            alert("Sorry! wrong username and password.");
+        }
+    }
+
+    var userNamePrompt = prompt("What\'s your username?");
+    var passwordPrompt = prompt("What\'s your password?");
+
+    signIn (userNamePrompt, passwordPrompt);
+
+    </script>
+
+</body>
+</html>
